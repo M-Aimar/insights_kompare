@@ -11,23 +11,22 @@ const height = 500;
 
 const App = iterable => {
     let worldAtlas = useWorldAtlas();
-    let cities = useCities();
+    // let cities = useCities();
+    //
+    // const sizeValue = d => d.population;
+    // const maxRadius = 10;
+    //
+    // const sizeScale = scaleSqrt().domain([0, d3.max(cities, sizeValue)]).range([0, maxRadius])
 
-    const sizeValue = d => d.population;
-    const maxRadius = 10;
-
-    const sizeScale = scaleSqrt().domain([0, d3.max(cities, sizeValue)]).range([0, maxRadius])
-
-    if (!worldAtlas || !cities){
+    if (!worldAtlas){
         return <pre>Loading...</pre>
     }
-    // else {
-    //     data = data.features[74]
-    //
-    // }
+    else {
+        worldAtlas = worldAtlas.features[74]
+    }
     return (
         <svg width={width} height={height}>
-            <Marks worldAtlas={worldAtlas} cities={cities} sizeScale={sizeScale} sizeValue={sizeValue}/>
+            <Marks worldAtlas={worldAtlas}/>
         </svg>
     );
 }
