@@ -18,12 +18,13 @@ const App = iterable => {
     //
     // const sizeScale = scaleSqrt().domain([0, d3.max(cities, sizeValue)]).range([0, maxRadius])
 
-    if (!worldAtlas){
-        return <pre>Loading...</pre>
-    }
-    else {
-        worldAtlas = worldAtlas.features[74]
-    }
+    // if (!worldAtlas){ return <pre>Loading...</pre>
+    //
+    // }
+    // else {
+    //     // worldAtlas = worldAtlas.features[74]
+    //
+    // }
     return (
         <svg width={width} height={height}>
             <Marks worldAtlas={worldAtlas}/>
